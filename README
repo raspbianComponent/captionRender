@@ -1,0 +1,2 @@
+captionRender Module responsible to render the given text on separate layer at top of running video. Just like subtitle rendering, it display closedcaption for ongoing video streaming.
+This application runs on RPI environment.
