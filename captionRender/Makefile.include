@@ -1,14 +1,12 @@
 
 CFLAGS+= -march=armv7-a -mthumb  -mthumb-interwork -mfloat-abi=hard -mfpu=neon-vfpv4 -mtune=cortex-a7 -fno-omit-frame-pointer -fno-optimize-sibling-calls  -O2 -pipe -feliminate-unused-debug-types 
 
-CPPFLAGS= -fvisibility-inlines-hidden -std=c++11
+CPPFLAGS+= -fvisibility-inlines-hidden -std=c++11
 
 CFLAGS+= -DSTANDALONE -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS -DTARGET_POSIX -D_LINUX -fPIC -DPIC -D_REENTRANT -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -U_FORTIFY_SOURCE -Wall -g -DHAVE_LIBOPENMAX=2 -DOMX -DOMX_SKIP64BIT -ftree-vectorize -pipe -DUSE_EXTERNAL_OMX -DHAVE_LIBBCM_HOST -DUSE_EXTERNAL_LIBBCM_HOST -DUSE_VCHIQ_ARM -Wno-psabi
 
 
-LDFLAGS+= $(PKG_CONFIG_SYSROOT_DIR)/lib/libpthread.so.0 -L$(PKG_CONFIG_SYSROOT_DIR)/usr/lib -L$(PKG_CONFIG_SYSROOT_DIR)/lib -lGLESv2 -lEGL -lbcm_host -lvcos -lvchiq_arm -lrt -lm --sysroot=/home/pritam/kb/rdkv-rpi/build-raspberrypi-rdk-mc/tmp/sysroots/raspberrypi-rdk-mc
-
-# LDFLAGS+= -L$(PKG_CONFIG_SYSROOT_DIR)usr/lib -L$(PKG_CONFIG_SYSROOT_DIR)lib -lGLESv2 -lEGL -lbcm_host -lvcos -lvchiq_arm -lrt -lm -L$(PRO_DIR)libs/ilclient -L$(PRO_DIR)libs/vgfont
+LDFLAGS+= $(PKG_CONFIG_SYSROOT_DIR)/lib/libpthread.so.0 -L$(PKG_CONFIG_SYSROOT_DIR)/usr/lib -L$(PKG_CONFIG_SYSROOT_DIR)/lib -lGLESv2 -lEGL -lbcm_host -lvcos -lvchiq_arm -lrt -lm
 
 INCLUDES+= -I./ -I$(PKG_CONFIG_SYSROOT_DIR)/usr/include -I$(PKG_CONFIG_SYSROOT_DIR)/usr/include/interface/vmcs_host/linux/
 

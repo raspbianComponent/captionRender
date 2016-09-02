@@ -1,7 +1,7 @@
 OBJS=font.o vgft.o graphics.o
 LIB=libvgfont.a
 
-INCLUDES+=-I$(SDKSTAGE)/usr/include/freetype2 -I$(SDKSTAGE)/usr/include -I$(SDKSTAGE)/usr/include/arm-linux-gnueabi
+INCLUDES+=-I$(PKG_CONFIG_SYSROOT_DIR)/usr/include/freetype2 -I$(PKG_CONFIG_SYSROOT_DIR)/usr/include -I$(PKG_CONFIG_SYSROOT_DIR)/usr/include/c++/5.2.1/arm-rdk-linux-gnueabi
 
 include ../../Makefile.include
 
