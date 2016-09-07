@@ -20,7 +20,7 @@ all: $(BIN) $(LIB)
 	@rm -f $@ 
 	$(CXX) $(CFLAGS) $(CPPFLAGS) $(INCLUDES) -g -c $< -o $@ -Wno-deprecated-declarations
 
-%.bin: $(OBJS)
+$(BIN): $(OBJS)
 	$(CC) -o $@ -Wl,--whole-archive $(OBJS) $(LDFLAGS) -Wl,--no-whole-archive -rdynamic -march=armv7-a -mthumb  -mthumb-interwork -mfloat-abi=hard -mfpu=neon-vfpv4 -mtune=cortex-a7 -fno-omit-frame-pointer -fno-optimize-sibling-calls
 
 %.a: $(OBJS)
